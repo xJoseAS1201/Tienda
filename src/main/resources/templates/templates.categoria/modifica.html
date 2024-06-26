@@ -6,14 +6,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:replace="layaut/plantilla :: head">
-        linebreaks
         <title>TODO supply a title</title>
     </head>
     <body>
 
         <header th:replace="layaut/plantilla :: header"/>
 
+        <section th:replace="categoria/fragmentos :: botonesAgregar "><section/>
+        <section th:replace="categoria/fragmentos :: editarCategoria "><section/>
+        <section th:replace="categoria/fragmentos :: listadoCategorias "><section/>
 
+        <footer th:replace="layout/plantilla  :: footer"><footer/>
 
     </body>
 </html>
