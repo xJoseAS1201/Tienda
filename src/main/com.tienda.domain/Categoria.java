@@ -28,6 +28,11 @@ public class Categoria implements Serializable {
     public Categoria(){
     }
 
+    @OneToMany
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    List<Producto> productos;
+
+
     public Categoria (String descripcion, String rutaImagen, boolean activo){
 
     this.descripcion = descripcion;
