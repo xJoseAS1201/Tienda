@@ -79,4 +79,16 @@ public class PruebasController {
         return "/pruebas/listado2";
     }
 
+    @PostMapping("/query4")
+    public String consultaQuery4(@RequestParam(value = "inventarioMin") int inventarioMin,
+            @RequestParam(value = "inventarioMax") int inventarioMax, Model model) {
+        var productos = productoService.findByInventarioBetweenOrderByDescripcion(inventarioMin, inventarioMax);
+        model.addAttribute("productos", productos);
+        model.addAttribute("inventarioMin", inventarioMin);
+        model.addAttribute("inventarioMax", inventarioMax);
+        model.addAttribute("totalProductos", productos.size());
+        return "/pruebas/listado2";
+    }
+
+
 }

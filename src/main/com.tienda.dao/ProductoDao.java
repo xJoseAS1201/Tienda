@@ -22,4 +22,7 @@ public interface ProductoDao extends JpaRepository<Producto, Long> {
             value = "SELECT * FROM producto where producto.precio BETWEEN :precioInf AND :precioSup ORDER BY producto.descripcion ASC")
     public List<Producto> metodoNativo(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup);
 
+    public List<Producto> findByInventarioBetweenOrderByDescripcion(int inventarioMin, int inventarioMax);
+
+
 }

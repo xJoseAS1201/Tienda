@@ -54,4 +54,11 @@ public class ProductoServiceimpl implements ProductoService {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByInventarioBetweenOrderByDescripcion(int inventarioMin, int inventarioMax) {
+        return productoDao.findByInventarioBetweenOrderByDescripcion(inventarioMin, inventarioMax);
+    }
+
+
 }
